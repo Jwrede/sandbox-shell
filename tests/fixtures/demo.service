@@ -1,0 +1,16 @@
+[Unit]
+Description=sandbox-shell test service
+
+[Service]
+Type=simple
+DynamicUser=yes
+StateDirectory=%N
+RuntimeDirectory=%N
+WorkingDirectory=/var/lib/%N
+Environment="GREETING=hello world" MODE=test
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+ExecStart=/bin/false
+Restart=on-failure
